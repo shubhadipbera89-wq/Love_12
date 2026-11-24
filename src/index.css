@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #140108;
+    color: #fff0f3;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-handwriting {
+    font-family: 'Caveat', cursive;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(45, 10, 24, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 179, 198, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(74, 14, 38, 0.6);
+    border-color: rgba(255, 77, 109, 0.4);
+    box-shadow: 0 12px 40px 0 rgba(255, 77, 109, 0.25);
+  }
+
+  .glass-button {
+    background: linear-gradient(135deg, rgba(255, 77, 109, 0.8) 0%, rgba(201, 24, 74, 0.9) 100%);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(255, 77, 109, 0.4);
+    transition: all 0.3s ease;
+  }
+
+  .glass-button:hover {
+    background: linear-gradient(135deg, rgba(255, 117, 143, 0.9) 0%, rgba(225, 29, 72, 1) 100%);
+    box-shadow: 0 6px 28px rgba(255, 77, 109, 0.6);
+    transform: translateY(-2px);
+  }
+
+  .glass-button-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+  }
+
+  .glass-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 179, 198, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 15px rgba(255, 77, 109, 0.7), 0 0 30px rgba(255, 77, 109, 0.4);
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 25px rgba(255, 183, 3, 0.4);
+  }
+
+  .heartbeat {
+    animation: heartbeat 1.3s ease-in-out infinite;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #140108;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #590d22;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #800f2e;
+}
+
+/* Accessibility: Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
